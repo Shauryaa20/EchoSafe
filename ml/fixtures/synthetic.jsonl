@@ -1,0 +1,8 @@
+{"text":"I feel happy and grateful today.","emotion":"joy","stress":false}
+{"text":"I am worried and overwhelmed.","emotion":"fear","stress":true}
+{"text":"I feel angry and annoyed.","emotion":"anger","stress":true}
+{"text":"This makes me feel sad and alone.","emotion":"sadness","stress":false}
+{"text":"That surprise came unexpectedly.","emotion":"surprise","stress":false}
+{"text":"That is disgusting and awful.","emotion":"disgust","stress":false}
+{"text":"I am calm and comfortable.","emotion":"neutral","stress":false}
+{"text":"The situation was scary and unsafe.","emotion":"fear","stress":true}
