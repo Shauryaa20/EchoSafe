@@ -1,0 +1,51 @@
+{
+  "dataset": {
+    "name": "go_emotions",
+    "dataset_id": "google-research-datasets/go_emotions",
+    "labels": [
+      "admiration",
+      "amusement",
+      "anger",
+      "annoyance",
+      "approval",
+      "caring",
+      "confusion",
+      "curiosity",
+      "desire",
+      "disappointment",
+      "disapproval",
+      "disgust",
+      "embarrassment",
+      "excitement",
+      "fear",
+      "gratitude",
+      "grief",
+      "joy",
+      "love",
+      "nervousness",
+      "optimism",
+      "pride",
+      "realization",
+      "relief",
+      "remorse",
+      "sadness",
+      "surprise",
+      "neutral"
+    ],
+    "multilabel": true,
+    "splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "counts": {
+      "train": 43410,
+      "validation": 5426,
+      "test": 5427
+    },
+    "seed": 42
+  },
+  "model": "tfidf_logistic_regression",
+  "hardware": "Windows-11-10.0.26200-SP0",
+  "seed": 42
+}

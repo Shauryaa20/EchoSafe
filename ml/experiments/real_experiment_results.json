@@ -1,0 +1,1106 @@
+[
+  {
+    "dataset": "dreaddit",
+    "model": "cnn",
+    "accuracy": 0.6615384615384615,
+    "precision": 0.7343173431734318,
+    "recall": 0.5392953929539296,
+    "f1": 0.621875,
+    "precision_macro": 0.6757172301452745,
+    "recall_macro": 0.6656014537023983,
+    "f1_macro": 0.6577729430379746,
+    "precision_weighted": 0.6776022687461802,
+    "recall_weighted": 0.6615384615384615,
+    "f1_weighted": 0.6566181840311587,
+    "roc_auc": 0.7182276736062158,
+    "pr_auc": 0.7343064854107025,
+    "per_class": {
+      "not_stress": {
+        "precision": 0.6171171171171171,
+        "recall": 0.791907514450867,
+        "f1": 0.6936708860759494,
+        "support": 346
+      },
+      "stress": {
+        "precision": 0.7343173431734318,
+        "recall": 0.5392953929539296,
+        "f1": 0.621875,
+        "support": 369
+      }
+    },
+    "training_seconds": 1.9667121000002226,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\dreaddit_cnn"
+  },
+  {
+    "dataset": "dreaddit",
+    "model": "bigru",
+    "accuracy": 0.6195804195804195,
+    "precision": 0.582905982905983,
+    "recall": 0.924119241192412,
+    "f1": 0.7148846960167715,
+    "precision_macro": 0.6837606837606838,
+    "recall_macro": 0.6094584645268418,
+    "f1_macro": 0.5717280622941,
+    "precision_weighted": 0.6805164066702528,
+    "recall_weighted": 0.6195804195804195,
+    "f1_weighted": 0.5763331008614028,
+    "roc_auc": 0.6983567523536507,
+    "pr_auc": 0.6994317644383286,
+    "per_class": {
+      "not_stress": {
+        "precision": 0.7846153846153846,
+        "recall": 0.2947976878612717,
+        "f1": 0.42857142857142855,
+        "support": 346
+      },
+      "stress": {
+        "precision": 0.582905982905983,
+        "recall": 0.924119241192412,
+        "f1": 0.7148846960167715,
+        "support": 369
+      }
+    },
+    "training_seconds": 7.846644700000979,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\dreaddit_bigru"
+  },
+  {
+    "dataset": "dreaddit",
+    "model": "bilstm",
+    "accuracy": 0.6293706293706294,
+    "precision": 0.5931899641577061,
+    "recall": 0.8970189701897019,
+    "f1": 0.7141316073354909,
+    "precision_macro": 0.6755758737985983,
+    "recall_macro": 0.6204748030139261,
+    "f1_macro": 0.5936463205663538,
+    "precision_weighted": 0.6729256976842759,
+    "recall_weighted": 0.6293706293706294,
+    "f1_weighted": 0.5975220710498366,
+    "roc_auc": 0.7159171013675454,
+    "pr_auc": 0.7194586351009702,
+    "per_class": {
+      "not_stress": {
+        "precision": 0.7579617834394905,
+        "recall": 0.3439306358381503,
+        "f1": 0.4731610337972167,
+        "support": 346
+      },
+      "stress": {
+        "precision": 0.5931899641577061,
+        "recall": 0.8970189701897019,
+        "f1": 0.7141316073354909,
+        "support": 369
+      }
+    },
+    "training_seconds": 4.162972899999659,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\dreaddit_bilstm"
+  },
+  {
+    "dataset": "dreaddit",
+    "model": "cnn_bigru_attention",
+    "accuracy": 0.6657342657342658,
+    "precision": 0.7018633540372671,
+    "recall": 0.6124661246612466,
+    "f1": 0.6541244573082489,
+    "precision_macro": 0.6689978347794479,
+    "recall_macro": 0.6675047386312014,
+    "f1_macro": 0.6653572218882245,
+    "precision_weighted": 0.670055047287042,
+    "recall_weighted": 0.6657342657342658,
+    "f1_weighted": 0.6649958882024352,
+    "roc_auc": 0.7235772357723578,
+    "pr_auc": 0.7207080009736886,
+    "per_class": {
+      "not_stress": {
+        "precision": 0.6361323155216285,
+        "recall": 0.7225433526011561,
+        "f1": 0.6765899864682002,
+        "support": 346
+      },
+      "stress": {
+        "precision": 0.7018633540372671,
+        "recall": 0.6124661246612466,
+        "f1": 0.6541244573082489,
+        "support": 369
+      }
+    },
+    "training_seconds": 9.125301900001432,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\dreaddit_cnn_bigru_attention"
+  },
+  {
+    "dataset": "go_emotions",
+    "model": "tfidf_logistic_regression",
+    "subset_accuracy": 0.24894048277132855,
+    "precision_micro": 0.7420091324200914,
+    "recall_micro": 0.2567546215831885,
+    "f1_micro": 0.3815001760770043,
+    "precision_macro": 0.6213897375983667,
+    "recall_macro": 0.1408101309988196,
+    "f1_macro": 0.19843743252631363,
+    "precision_weighted": 0.7184524647789794,
+    "recall_weighted": 0.2567546215831885,
+    "f1_weighted": 0.3346330451669689,
+    "roc_auc_macro": 0.8786370542258946,
+    "pr_auc_macro": 0.40264173655503444,
+    "per_label": {
+      "admiration": {
+        "precision": 0.7671957671957672,
+        "recall": 0.2876984126984127,
+        "f1": 0.4184704184704185,
+        "support": 504
+      },
+      "amusement": {
+        "precision": 0.856,
+        "recall": 0.4053030303030303,
+        "f1": 0.5501285347043702,
+        "support": 264
+      },
+      "anger": {
+        "precision": 0.76,
+        "recall": 0.09595959595959595,
+        "f1": 0.17040358744394618,
+        "support": 198
+      },
+      "annoyance": {
+        "precision": 0.8,
+        "recall": 0.0125,
+        "f1": 0.024615384615384615,
+        "support": 320
+      },
+      "approval": {
+        "precision": 0.5909090909090909,
+        "recall": 0.037037037037037035,
+        "f1": 0.06970509383378017,
+        "support": 351
+      },
+      "caring": {
+        "precision": 0.8,
+        "recall": 0.05925925925925926,
+        "f1": 0.1103448275862069,
+        "support": 135
+      },
+      "confusion": {
+        "precision": 0.5714285714285714,
+        "recall": 0.026143790849673203,
+        "f1": 0.05,
+        "support": 153
+      },
+      "curiosity": {
+        "precision": 0.4358974358974359,
+        "recall": 0.05985915492957746,
+        "f1": 0.10526315789473684,
+        "support": 284
+      },
+      "desire": {
+        "precision": 0.8,
+        "recall": 0.0963855421686747,
+        "f1": 0.17204301075268819,
+        "support": 83
+      },
+      "disappointment": {
+        "precision": 1.0,
+        "recall": 0.006622516556291391,
+        "f1": 0.013157894736842105,
+        "support": 151
+      },
+      "disapproval": {
+        "precision": 0.5294117647058824,
+        "recall": 0.033707865168539325,
+        "f1": 0.06338028169014084,
+        "support": 267
+      },
+      "disgust": {
+        "precision": 0.8,
+        "recall": 0.13008130081300814,
+        "f1": 0.22377622377622378,
+        "support": 123
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      },
+      "excitement": {
+        "precision": 0.8333333333333334,
+        "recall": 0.0970873786407767,
+        "f1": 0.17391304347826086,
+        "support": 103
+      },
+      "fear": {
+        "precision": 0.8,
+        "recall": 0.05128205128205128,
+        "f1": 0.0963855421686747,
+        "support": 78
+      },
+      "gratitude": {
+        "precision": 0.9686411149825784,
+        "recall": 0.7897727272727273,
+        "f1": 0.8701095461658842,
+        "support": 352
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "joy": {
+        "precision": 0.75,
+        "recall": 0.14906832298136646,
+        "f1": 0.24870466321243523,
+        "support": 161
+      },
+      "love": {
+        "precision": 0.8125,
+        "recall": 0.5462184873949579,
+        "f1": 0.6532663316582915,
+        "support": 238
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23
+      },
+      "optimism": {
+        "precision": 0.8070175438596491,
+        "recall": 0.24731182795698925,
+        "f1": 0.3786008230452675,
+        "support": 186
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16
+      },
+      "realization": {
+        "precision": 1.0,
+        "recall": 0.006896551724137931,
+        "f1": 0.0136986301369863,
+        "support": 145
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "remorse": {
+        "precision": 0.6111111111111112,
+        "recall": 0.19642857142857142,
+        "f1": 0.2972972972972973,
+        "support": 56
+      },
+      "sadness": {
+        "precision": 0.8571428571428571,
+        "recall": 0.11538461538461539,
+        "f1": 0.2033898305084746,
+        "support": 156
+      },
+      "surprise": {
+        "precision": 0.5789473684210527,
+        "recall": 0.07801418439716312,
+        "f1": 0.1375,
+        "support": 141
+      },
+      "neutral": {
+        "precision": 0.6693766937669376,
+        "recall": 0.41466144376049247,
+        "f1": 0.51209398756047,
+        "support": 1787
+      }
+    },
+    "training_seconds": 25.692572400001154,
+    "features": 58338,
+    "average_inference_ms_per_sample": 0.0043804864566132215,
+    "context_ablation": "unavailable: no conversation dataset used"
+  },
+  {
+    "dataset": "dreaddit",
+    "model": "tfidf_logistic_regression",
+    "accuracy": 0.7104895104895105,
+    "precision": 0.6901408450704225,
+    "recall": 0.7967479674796748,
+    "f1": 0.7396226415094339,
+    "precision_macro": 0.7153126370680832,
+    "recall_macro": 0.7076225386531322,
+    "f1_macro": 0.706819194770465,
+    "precision_weighted": 0.714502915087739,
+    "recall_weighted": 0.7104895104895105,
+    "f1_weighted": 0.7078744105396906,
+    "roc_auc": 0.8147939282861038,
+    "pr_auc": 0.8332271873728869,
+    "per_class": {
+      "not_stress": {
+        "precision": 0.740484429065744,
+        "recall": 0.6184971098265896,
+        "f1": 0.6740157480314961,
+        "support": 346
+      },
+      "stress": {
+        "precision": 0.6901408450704225,
+        "recall": 0.7967479674796748,
+        "f1": 0.7396226415094339,
+        "support": 369
+      }
+    },
+    "training_seconds": 1.904750800000329,
+    "features": 27783,
+    "average_inference_ms_per_sample": 0.0007632167841359921,
+    "context_ablation": "unavailable: no conversation dataset used"
+  },
+  {
+    "dataset": "go_emotions",
+    "model": "cnn",
+    "subset_accuracy": 0.1826054910632025,
+    "precision_micro": 0.7235576923076923,
+    "recall_micro": 0.19023542423763629,
+    "f1_micro": 0.3012636056549481,
+    "precision_macro": 0.23230061831695226,
+    "recall_macro": 0.11054609920981344,
+    "f1_macro": 0.1318130000947917,
+    "precision_weighted": 0.4177824883474532,
+    "recall_weighted": 0.19023542423763629,
+    "f1_weighted": 0.24296960366240006,
+    "roc_auc_macro": 0.7371757788623465,
+    "pr_auc_macro": 0.23105546965918386,
+    "per_label": {
+      "admiration": {
+        "precision": 0.7327586206896551,
+        "recall": 0.16865079365079366,
+        "f1": 0.27419354838709675,
+        "support": 504
+      },
+      "amusement": {
+        "precision": 0.8421052631578947,
+        "recall": 0.36363636363636365,
+        "f1": 0.5079365079365079,
+        "support": 264
+      },
+      "anger": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 198
+      },
+      "annoyance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 320
+      },
+      "approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 351
+      },
+      "caring": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 135
+      },
+      "confusion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 153
+      },
+      "curiosity": {
+        "precision": 0.5714285714285714,
+        "recall": 0.014084507042253521,
+        "f1": 0.027491408934707903,
+        "support": 284
+      },
+      "desire": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 83
+      },
+      "disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 151
+      },
+      "disapproval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 267
+      },
+      "disgust": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 123
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      },
+      "excitement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 103
+      },
+      "fear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 78
+      },
+      "gratitude": {
+        "precision": 0.9707792207792207,
+        "recall": 0.8494318181818182,
+        "f1": 0.906060606060606,
+        "support": 352
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "joy": {
+        "precision": 0.5714285714285714,
+        "recall": 0.024844720496894408,
+        "f1": 0.047619047619047616,
+        "support": 161
+      },
+      "love": {
+        "precision": 0.8,
+        "recall": 0.6722689075630253,
+        "f1": 0.730593607305936,
+        "support": 238
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23
+      },
+      "optimism": {
+        "precision": 0.8333333333333334,
+        "recall": 0.13440860215053763,
+        "f1": 0.23148148148148148,
+        "support": 186
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16
+      },
+      "realization": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 145
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "remorse": {
+        "precision": 0.5789473684210527,
+        "recall": 0.5892857142857143,
+        "f1": 0.584070796460177,
+        "support": 56
+      },
+      "sadness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 156
+      },
+      "surprise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 141
+      },
+      "neutral": {
+        "precision": 0.6036363636363636,
+        "recall": 0.2786793508673755,
+        "f1": 0.38131699846860645,
+        "support": 1787
+      }
+    },
+    "training_seconds": 35.23066970000036,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\go_emotions_cnn"
+  },
+  {
+    "dataset": "go_emotions",
+    "model": "bigru",
+    "subset_accuracy": 0.06633499170812604,
+    "precision_micro": 0.8364661654135338,
+    "recall_micro": 0.07031126560278085,
+    "f1_micro": 0.12971869989797405,
+    "precision_macro": 0.08849186784290938,
+    "recall_macro": 0.04067183163645476,
+    "f1_macro": 0.0524654865244347,
+    "precision_weighted": 0.26820912017551946,
+    "recall_weighted": 0.07031126560278085,
+    "f1_weighted": 0.09824166738116427,
+    "roc_auc_macro": 0.6930004444211277,
+    "pr_auc_macro": 0.17040809116432662,
+    "per_label": {
+      "admiration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 504
+      },
+      "amusement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 264
+      },
+      "anger": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 198
+      },
+      "annoyance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 320
+      },
+      "approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 351
+      },
+      "caring": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 135
+      },
+      "confusion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 153
+      },
+      "curiosity": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 284
+      },
+      "desire": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 83
+      },
+      "disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 151
+      },
+      "disapproval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 267
+      },
+      "disgust": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 123
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      },
+      "excitement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 103
+      },
+      "fear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 78
+      },
+      "gratitude": {
+        "precision": 0.9824561403508771,
+        "recall": 0.6363636363636364,
+        "f1": 0.7724137931034483,
+        "support": 352
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "joy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 161
+      },
+      "love": {
+        "precision": 0.8524590163934426,
+        "recall": 0.4369747899159664,
+        "f1": 0.5777777777777777,
+        "support": 238
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23
+      },
+      "optimism": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 186
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16
+      },
+      "realization": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 145
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "remorse": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 56
+      },
+      "sadness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 156
+      },
+      "surprise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 141
+      },
+      "neutral": {
+        "precision": 0.6428571428571429,
+        "recall": 0.06547285954113038,
+        "f1": 0.11884205180294566,
+        "support": 1787
+      }
+    },
+    "training_seconds": 159.6987334000005,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\go_emotions_bigru"
+  },
+  {
+    "dataset": "go_emotions",
+    "model": "bilstm",
+    "subset_accuracy": 0.08218168417173392,
+    "precision_micro": 0.7521246458923513,
+    "recall_micro": 0.08389951019118344,
+    "f1_micro": 0.1509594882729211,
+    "precision_macro": 0.0862121259377938,
+    "recall_macro": 0.03917304159034525,
+    "f1_macro": 0.051373269187560314,
+    "precision_weighted": 0.2549419615274622,
+    "recall_weighted": 0.08389951019118344,
+    "f1_weighted": 0.11885794892867901,
+    "roc_auc_macro": 0.6965310813384518,
+    "pr_auc_macro": 0.16610174247923074,
+    "per_label": {
+      "admiration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 504
+      },
+      "amusement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 264
+      },
+      "anger": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 198
+      },
+      "annoyance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 320
+      },
+      "approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 351
+      },
+      "caring": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 135
+      },
+      "confusion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 153
+      },
+      "curiosity": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 284
+      },
+      "desire": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 83
+      },
+      "disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 151
+      },
+      "disapproval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 267
+      },
+      "disgust": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 123
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      },
+      "excitement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 103
+      },
+      "fear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 78
+      },
+      "gratitude": {
+        "precision": 0.9322709163346613,
+        "recall": 0.6647727272727273,
+        "f1": 0.7761194029850746,
+        "support": 352
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "joy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 161
+      },
+      "love": {
+        "precision": 0.8795180722891566,
+        "recall": 0.3067226890756303,
+        "f1": 0.45482866043613707,
+        "support": 238
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23
+      },
+      "optimism": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 186
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16
+      },
+      "realization": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 145
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "remorse": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 56
+      },
+      "sadness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 156
+      },
+      "surprise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 141
+      },
+      "neutral": {
+        "precision": 0.6021505376344086,
+        "recall": 0.12534974818130945,
+        "f1": 0.20750347383047707,
+        "support": 1787
+      }
+    },
+    "training_seconds": 79.42434909999974,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\go_emotions_bilstm"
+  },
+  {
+    "dataset": "go_emotions",
+    "model": "cnn_bigru_attention",
+    "subset_accuracy": 0.26460291136908054,
+    "precision_micro": 0.6806324110671936,
+    "recall_micro": 0.2720808974561542,
+    "f1_micro": 0.3887571960717914,
+    "precision_macro": 0.3299528655387494,
+    "recall_macro": 0.14452583778272482,
+    "f1_macro": 0.1750287281358047,
+    "precision_weighted": 0.4760308538190607,
+    "recall_weighted": 0.2720808974561542,
+    "f1_weighted": 0.3162917324359877,
+    "roc_auc_macro": 0.7796483569118828,
+    "pr_auc_macro": 0.26571742848736274,
+    "per_label": {
+      "admiration": {
+        "precision": 0.775,
+        "recall": 0.24603174603174602,
+        "f1": 0.37349397590361444,
+        "support": 504
+      },
+      "amusement": {
+        "precision": 0.8089887640449438,
+        "recall": 0.5454545454545454,
+        "f1": 0.6515837104072398,
+        "support": 264
+      },
+      "anger": {
+        "precision": 1.0,
+        "recall": 0.015151515151515152,
+        "f1": 0.029850746268656716,
+        "support": 198
+      },
+      "annoyance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 320
+      },
+      "approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 351
+      },
+      "caring": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 135
+      },
+      "confusion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 153
+      },
+      "curiosity": {
+        "precision": 0.5,
+        "recall": 0.01056338028169014,
+        "f1": 0.020689655172413793,
+        "support": 284
+      },
+      "desire": {
+        "precision": 0.7,
+        "recall": 0.08433734939759036,
+        "f1": 0.15053763440860216,
+        "support": 83
+      },
+      "disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 151
+      },
+      "disapproval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 267
+      },
+      "disgust": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 123
+      },
+      "embarrassment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      },
+      "excitement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 103
+      },
+      "fear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 78
+      },
+      "gratitude": {
+        "precision": 0.9642857142857143,
+        "recall": 0.84375,
+        "f1": 0.9,
+        "support": 352
+      },
+      "grief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "joy": {
+        "precision": 0.7142857142857143,
+        "recall": 0.18633540372670807,
+        "f1": 0.2955665024630542,
+        "support": 161
+      },
+      "love": {
+        "precision": 0.8181818181818182,
+        "recall": 0.6428571428571429,
+        "f1": 0.72,
+        "support": 238
+      },
+      "nervousness": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23
+      },
+      "optimism": {
+        "precision": 0.7469879518072289,
+        "recall": 0.3333333333333333,
+        "f1": 0.46096654275092935,
+        "support": 186
+      },
+      "pride": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 16
+      },
+      "realization": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 145
+      },
+      "relief": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "remorse": {
+        "precision": 0.6,
+        "recall": 0.5357142857142857,
+        "f1": 0.5660377358490566,
+        "support": 56
+      },
+      "sadness": {
+        "precision": 0.5,
+        "recall": 0.00641025641025641,
+        "f1": 0.012658227848101266,
+        "support": 156
+      },
+      "surprise": {
+        "precision": 0.53125,
+        "recall": 0.12056737588652482,
+        "f1": 0.19653179190751446,
+        "support": 141
+      },
+      "neutral": {
+        "precision": 0.579700272479564,
+        "recall": 0.4762171236709569,
+        "f1": 0.5228878648233487,
+        "support": 1787
+      }
+    },
+    "training_seconds": 151.86176559999876,
+    "output": "C:\\Users\\sjraj\\OneDrive\\Documents\\EchoSafe\\ml\\experiments\\go_emotions_cnn_bigru_attention"
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "dataset": {
+    "name": "go_emotions",
+    "dataset_id": "google-research-datasets/go_emotions",
+    "labels": [
+      "admiration",
+      "amusement",
+      "anger",
+      "annoyance",
+      "approval",
+      "caring",
+      "confusion",
+      "curiosity",
+      "desire",
+      "disappointment",
+      "disapproval",
+      "disgust",
+      "embarrassment",
+      "excitement",
+      "fear",
+      "gratitude",
+      "grief",
+      "joy",
+      "love",
+      "nervousness",
+      "optimism",
+      "pride",
+      "realization",
+      "relief",
+      "remorse",
+      "sadness",
+      "surprise",
+      "neutral"
+    ],
+    "multilabel": true,
+    "splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "counts": {
+      "train": 43410,
+      "validation": 5426,
+      "test": 5427
+    },
+    "seed": 42
+  },
+  "architecture": "bigru",
+  "epochs": 1,
+  "batch_size": 64,
+  "max_length": 96,
+  "seed": 42,
+  "device": "cpu",
+  "hardware": "Windows-11-10.0.26200-SP0",
+  "training_seconds": 159.6987334000005,
+  "parameter_count": 1333532,
+  "trainable_parameter_count": 1333532,
+  "average_inference_ms_per_sample": 0.8529594250966239,
+  "context_ablation": "unavailable: these are independent messages, not conversations"
+}

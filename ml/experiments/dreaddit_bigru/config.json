@@ -1,0 +1,35 @@
+{
+  "dataset": {
+    "name": "dreaddit",
+    "dataset_id": "andreagasparini/dreaddit",
+    "labels": [
+      "not_stress",
+      "stress"
+    ],
+    "multilabel": false,
+    "splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "validation_source": "stratified 10% of official train",
+    "counts": {
+      "train": 2554,
+      "validation": 284,
+      "test": 715
+    },
+    "seed": 42
+  },
+  "architecture": "bigru",
+  "epochs": 1,
+  "batch_size": 64,
+  "max_length": 96,
+  "seed": 42,
+  "device": "cpu",
+  "hardware": "Windows-11-10.0.26200-SP0",
+  "training_seconds": 7.846644700000979,
+  "parameter_count": 763265,
+  "trainable_parameter_count": 763265,
+  "average_inference_ms_per_sample": 0.7328267132885179,
+  "context_ablation": "unavailable: these are independent messages, not conversations"
+}

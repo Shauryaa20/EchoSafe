@@ -1,0 +1,702 @@
+[
+  {
+    "model": "bigru",
+    "class": "admiration",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "amusement",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "anger",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "annoyance",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "approval",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "caring",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "confusion",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "curiosity",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "desire",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "disappointment",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "disapproval",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "disgust",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "embarrassment",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "excitement",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "fear",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "gratitude",
+    "f1": 0.7724137931034483
+  },
+  {
+    "model": "bigru",
+    "class": "grief",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "joy",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "love",
+    "f1": 0.5777777777777777
+  },
+  {
+    "model": "bigru",
+    "class": "nervousness",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "optimism",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "pride",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "realization",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "relief",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "remorse",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "sadness",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "surprise",
+    "f1": 0.0
+  },
+  {
+    "model": "bigru",
+    "class": "neutral",
+    "f1": 0.11884205180294566
+  },
+  {
+    "model": "bilstm",
+    "class": "admiration",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "amusement",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "anger",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "annoyance",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "approval",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "caring",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "confusion",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "curiosity",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "desire",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "disappointment",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "disapproval",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "disgust",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "embarrassment",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "excitement",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "fear",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "gratitude",
+    "f1": 0.7761194029850746
+  },
+  {
+    "model": "bilstm",
+    "class": "grief",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "joy",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "love",
+    "f1": 0.45482866043613707
+  },
+  {
+    "model": "bilstm",
+    "class": "nervousness",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "optimism",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "pride",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "realization",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "relief",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "remorse",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "sadness",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "surprise",
+    "f1": 0.0
+  },
+  {
+    "model": "bilstm",
+    "class": "neutral",
+    "f1": 0.20750347383047707
+  },
+  {
+    "model": "cnn",
+    "class": "admiration",
+    "f1": 0.27419354838709675
+  },
+  {
+    "model": "cnn",
+    "class": "amusement",
+    "f1": 0.5079365079365079
+  },
+  {
+    "model": "cnn",
+    "class": "anger",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "annoyance",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "approval",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "caring",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "confusion",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "curiosity",
+    "f1": 0.027491408934707903
+  },
+  {
+    "model": "cnn",
+    "class": "desire",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "disappointment",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "disapproval",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "disgust",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "embarrassment",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "excitement",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "fear",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "gratitude",
+    "f1": 0.906060606060606
+  },
+  {
+    "model": "cnn",
+    "class": "grief",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "joy",
+    "f1": 0.047619047619047616
+  },
+  {
+    "model": "cnn",
+    "class": "love",
+    "f1": 0.730593607305936
+  },
+  {
+    "model": "cnn",
+    "class": "nervousness",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "optimism",
+    "f1": 0.23148148148148148
+  },
+  {
+    "model": "cnn",
+    "class": "pride",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "realization",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "relief",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "remorse",
+    "f1": 0.584070796460177
+  },
+  {
+    "model": "cnn",
+    "class": "sadness",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "surprise",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn",
+    "class": "neutral",
+    "f1": 0.38131699846860645
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "admiration",
+    "f1": 0.37349397590361444
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "amusement",
+    "f1": 0.6515837104072398
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "anger",
+    "f1": 0.029850746268656716
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "annoyance",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "approval",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "caring",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "confusion",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "curiosity",
+    "f1": 0.020689655172413793
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "desire",
+    "f1": 0.15053763440860216
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "disappointment",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "disapproval",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "disgust",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "embarrassment",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "excitement",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "fear",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "gratitude",
+    "f1": 0.9
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "grief",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "joy",
+    "f1": 0.2955665024630542
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "love",
+    "f1": 0.72
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "nervousness",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "optimism",
+    "f1": 0.46096654275092935
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "pride",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "realization",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "relief",
+    "f1": 0.0
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "remorse",
+    "f1": 0.5660377358490566
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "sadness",
+    "f1": 0.012658227848101266
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "surprise",
+    "f1": 0.19653179190751446
+  },
+  {
+    "model": "cnn_bigru_attention",
+    "class": "neutral",
+    "f1": 0.5228878648233487
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "admiration",
+    "f1": 0.4184704184704185
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "amusement",
+    "f1": 0.5501285347043702
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "anger",
+    "f1": 0.17040358744394618
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "annoyance",
+    "f1": 0.024615384615384615
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "approval",
+    "f1": 0.06970509383378017
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "caring",
+    "f1": 0.1103448275862069
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "confusion",
+    "f1": 0.05
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "curiosity",
+    "f1": 0.10526315789473684
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "desire",
+    "f1": 0.17204301075268819
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "disappointment",
+    "f1": 0.013157894736842105
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "disapproval",
+    "f1": 0.06338028169014084
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "disgust",
+    "f1": 0.22377622377622378
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "embarrassment",
+    "f1": 0.0
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "excitement",
+    "f1": 0.17391304347826086
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "fear",
+    "f1": 0.0963855421686747
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "gratitude",
+    "f1": 0.8701095461658842
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "grief",
+    "f1": 0.0
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "joy",
+    "f1": 0.24870466321243523
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "love",
+    "f1": 0.6532663316582915
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "nervousness",
+    "f1": 0.0
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "optimism",
+    "f1": 0.3786008230452675
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "pride",
+    "f1": 0.0
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "realization",
+    "f1": 0.0136986301369863
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "relief",
+    "f1": 0.0
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "remorse",
+    "f1": 0.2972972972972973
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "sadness",
+    "f1": 0.2033898305084746
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "surprise",
+    "f1": 0.1375
+  },
+  {
+    "model": "tfidf_logistic_regression",
+    "class": "neutral",
+    "f1": 0.51209398756047
+  }
+]

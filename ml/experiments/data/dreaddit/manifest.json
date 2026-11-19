@@ -1,0 +1,21 @@
+{
+  "name": "dreaddit",
+  "dataset_id": "andreagasparini/dreaddit",
+  "labels": [
+    "not_stress",
+    "stress"
+  ],
+  "multilabel": false,
+  "splits": [
+    "train",
+    "validation",
+    "test"
+  ],
+  "validation_source": "stratified 10% of official train",
+  "counts": {
+    "train": 2554,
+    "validation": 284,
+    "test": 715
+  },
+  "seed": 42
+}

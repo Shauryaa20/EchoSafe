@@ -18,4 +18,7 @@ ml/data/processed/*
 *.pt
 *.pth
 *.ckpt
+*.joblib
+ml/checkpoints/real/
+ml/experiments/data/*/*.jsonl
 .DS_Store

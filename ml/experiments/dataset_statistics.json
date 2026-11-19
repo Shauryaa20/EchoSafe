@@ -1,0 +1,89 @@
+{
+  "goemotions": {
+    "splits": {
+      "train": 43410,
+      "validation": 5426,
+      "test": 5427
+    },
+    "classes": [
+      "admiration",
+      "amusement",
+      "anger",
+      "annoyance",
+      "approval",
+      "caring",
+      "confusion",
+      "curiosity",
+      "desire",
+      "disappointment",
+      "disapproval",
+      "disgust",
+      "embarrassment",
+      "excitement",
+      "fear",
+      "gratitude",
+      "grief",
+      "joy",
+      "love",
+      "nervousness",
+      "optimism",
+      "pride",
+      "realization",
+      "relief",
+      "remorse",
+      "sadness",
+      "surprise",
+      "neutral"
+    ],
+    "class_counts": {
+      "admiration": 5122,
+      "amusement": 2895,
+      "anger": 1960,
+      "annoyance": 3093,
+      "approval": 3687,
+      "caring": 1375,
+      "confusion": 1673,
+      "curiosity": 2723,
+      "desire": 801,
+      "disappointment": 1583,
+      "disapproval": 2581,
+      "disgust": 1013,
+      "embarrassment": 375,
+      "excitement": 1052,
+      "fear": 764,
+      "gratitude": 3372,
+      "grief": 96,
+      "joy": 1785,
+      "love": 2576,
+      "nervousness": 208,
+      "optimism": 1976,
+      "pride": 142,
+      "realization": 1382,
+      "relief": 182,
+      "remorse": 669,
+      "sadness": 1625,
+      "surprise": 1330,
+      "neutral": 17772
+    }
+  },
+  "dreaddit": {
+    "splits": {
+      "train": 2838,
+      "test": 715
+    },
+    "class_counts": {
+      "1": 1857,
+      "0": 1696
+    },
+    "split_class_counts": {
+      "train": {
+        "1": 1488,
+        "0": 1350
+      },
+      "test": {
+        "0": 346,
+        "1": 369
+      }
+    }
+  }
+}
