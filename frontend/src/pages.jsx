@@ -24,7 +24,7 @@ function Score({ label, value, tone = "" }) {
   return <div className="score"><div><span>{label}</span><strong>{Math.round(score * 100)}%</strong></div><div className="meter"><i className={tone} style={{width: `${score * 100}%`}}/></div></div>;
 }
 
-function Result({ result, onSave, saved }) {
+function Result({ result, onSave, saved, saveBusy = false, saveError = "" }) {
   const emotions = result.emotions || [];
   const phrases = result.explanations || [];
   return <div className="result">
@@ -36,7 +36,7 @@ function Result({ result, onSave, saved }) {
     <Score label="Model confidence" value={result.uncertainty?.confidence} tone="teal"/>
     {phrases.length > 0 && <div className="phrases"><p className="eyebrow">INFLUENTIAL PHRASES · APPROXIMATE</p>{phrases.slice(0, 4).map((phrase, index) => <span key={`${phrase.text}-${index}`}>{phrase.text}</span>)}</div>}
     <div className="result-note"><Check size={16}/> {result.uncertainty?.is_uncertain ? "The model is uncertain. Treat this as a prompt for reflection, not a conclusion." : "These are model scores about language patterns, not psychological certainty."}</div>
-    {onSave && <button className="button subtle save-button" onClick={onSave} disabled={saved}>{saved ? "Saved to history" : "Save analysis (opt in)"}</button>}
+    {onSave && <><button className="button subtle save-button" onClick={onSave} disabled={saved || saveBusy}>{saveBusy ? "Saving…" : saved ? "Saved to history" : "Save analysis (opt in)"}</button>{saved && <div className="save-success">Saved successfully. Open History or Dashboard to view it.</div>}{saveError && <div className="error save-error">{saveError}</div>}</>}
   </div>;
 }
 
@@ -51,6 +51,8 @@ export function Analyze() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [saved, setSaved] = useState(false);
+  const [saveBusy, setSaveBusy] = useState(false);
+  const [saveError, setSaveError] = useState("");
   const requestId = useRef(0);
 
   async function send(value = text) {
@@ -77,8 +79,10 @@ export function Analyze() {
   async function saveCurrent() {
     if (!result || !messages.length || saved) return;
     const latest = messages[messages.length - 1];
+    setSaveBusy(true);
+    setSaveError("");
     try {
-      await api.saveHistory({
+      const savedEntry = await api.saveHistory({
         text: latest.text,
         emotions: result.emotions,
         stress_score: result.stress_score,
@@ -90,9 +94,12 @@ export function Analyze() {
         model_status: result.model_status,
         mode: result.mode,
       });
+      if (!savedEntry?.id) throw new Error("The history database did not return a saved record.");
       setSaved(true);
     } catch (requestError) {
-      setError(requestError.message);
+      setSaveError(requestError.message);
+    } finally {
+      setSaveBusy(false);
     }
   }
 
@@ -106,7 +113,7 @@ export function Analyze() {
     setBusy(false);
   }
 
-  return <section className="page"><div className="page-heading"><div><p className="eyebrow accent">LIVE ANALYSIS</p><h2>Make space for the signal.</h2><p>Try a single message, or build a conversation to see how context changes the picture.</p></div><button className="button subtle" onClick={() => setText(demo[0])}>Load demo conversation</button></div><div className="analysis-layout"><div className="chat card"><div className="chat-top"><span className="live-dot"/>Your reflection <button onClick={clearConversation}>Clear</button></div><div className="messages">{messages.length === 0 && <div className="empty-chat"><div className="empty-icon">✦</div><h3>A blank page is a good place to begin.</h3><p>There is no right way to write here. Try describing what is on your mind.</p></div>}{messages.map((message, index) => <div className="message-row" key={`${message.text}-${index}`}><div className="bubble">{message.text}</div><span className="message-time">just now</span></div>)}</div><div className="composer"><textarea value={text} onChange={(event) => setText(event.target.value)} onKeyDown={(event) => {if (event.key === "Enter" && !event.shiftKey) {event.preventDefault(); send();}}} placeholder="Write a message to analyze…" maxLength={5000}/><button className="send" onClick={() => send()} disabled={busy || !text.trim()}>{busy ? <LoaderCircle className="spin"/> : <Send size={18}/>}</button></div><div className="composer-foot"><span>{text.length}/5000</span><span>Enter to send · Shift + Enter for a new line</span></div></div><aside className="insight-panel card">{busy && <Loading/>}{error && <div className="error">{error}</div>}{!busy && !result && !error && <div className="empty-insight"><div className="orb">◌</div><h3>Your insights will appear here.</h3><p>Send a message to see language patterns and model uncertainty.</p></div>}{result && !busy && <Result result={result} onSave={saveCurrent} saved={saved}/>}</aside></div><Disclaimer/></section>;
+  return <section className="page"><div className="page-heading"><div><p className="eyebrow accent">LIVE ANALYSIS</p><h2>Make space for the signal.</h2><p>Try a single message, or build a conversation to see how context changes the picture.</p></div><button className="button subtle" onClick={() => setText(demo[0])}>Load demo conversation</button></div><div className="analysis-layout"><div className="chat card"><div className="chat-top"><span className="live-dot"/>Your reflection <button onClick={clearConversation}>Clear</button></div><div className="messages">{messages.length === 0 && <div className="empty-chat"><div className="empty-icon">✦</div><h3>A blank page is a good place to begin.</h3><p>There is no right way to write here. Try describing what is on your mind.</p></div>}{messages.map((message, index) => <div className="message-row" key={`${message.text}-${index}`}><div className="bubble">{message.text}</div><span className="message-time">just now</span></div>)}</div><div className="composer"><textarea value={text} onChange={(event) => setText(event.target.value)} onKeyDown={(event) => {if (event.key === "Enter" && !event.shiftKey) {event.preventDefault(); send();}}} placeholder="Write a message to analyze…" maxLength={5000}/><button className="send" onClick={() => send()} disabled={busy || !text.trim()}>{busy ? <LoaderCircle className="spin"/> : <Send size={18}/>}</button></div><div className="composer-foot"><span>{text.length}/5000</span><span>Enter to send · Shift + Enter for a new line</span></div></div><aside className="insight-panel card">{busy && <Loading/>}{error && <div className="error">{error}</div>}{!busy && !result && !error && <div className="empty-insight"><div className="orb">◌</div><h3>Your insights will appear here.</h3><p>Send a message to see language patterns and model uncertainty.</p></div>}{result && !busy && <Result result={result} onSave={saveCurrent} saved={saved} saveBusy={saveBusy} saveError={saveError}/>}</aside></div><Disclaimer/></section>;
 }
 
 export function Journal() {
@@ -148,7 +155,7 @@ export function Dashboard() {
   async function refresh() { setBusy(true); try { const data = await api.getHistory(); setRows(data.entries || []); setError(""); } catch (requestError) { setError(requestError.message); } finally { setBusy(false); } }
   useEffect(() => { refresh(); }, []);
   const stats = useMemo(() => historyStats(rows), [rows]);
-  return <section className="page"><div className="page-heading"><div><p className="eyebrow accent">YOUR SESSION</p><h2>A gentle view of change.</h2><p>Signals below are calculated from analyses you explicitly saved.</p></div></div>{error && <div className="error">{error}</div>}{busy ? <Loading/> : rows.length === 0 ? <div className="card empty-state"><Lock size={20}/><h3>No saved analyses yet.</h3><p>Use “Save analysis (opt in)” after an analysis to build your dashboard.</p></div> : <><div className="stat-grid"><div className="stat card"><span>Total analyses</span><strong>{rows.length}</strong><small>Explicitly saved</small></div><div className="stat card"><span>Conversations</span><strong>{rows.filter((row) => row.analysis_type === "contextual").length}</strong><small>Contextual analyses</small></div><div className="stat card"><span>Average stress signal</span><strong>{Math.round(stats.averageStress * 100)}%</strong><small>Model score, not a clinical measure</small></div></div><div className="dashboard-grid"><div className="chart-card card"><h3>Most frequent top emotion</h3><ResponsiveContainer width="100%" height={240}><BarChart data={stats.distribution}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="label"/><YAxis allowDecimals={false}/><Tooltip/><Bar dataKey="count" fill="#4d9b91" radius={[6, 6, 0, 0]}/></BarChart></ResponsiveContainer></div><div className="chart-card card"><h3>Stress-language trend</h3><ResponsiveContainer width="100%" height={240}><LineChart data={stats.timeline}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="name"/><YAxis domain={[0, 100]}/><Tooltip/><Line type="monotone" dataKey="stress" stroke="#d6a257" strokeWidth={3}/></LineChart></ResponsiveContainer></div></div></>}</section>;
+  return <section className="page"><div className="page-heading"><div><p className="eyebrow accent">YOUR SESSION</p><h2>A gentle view of change.</h2><p>Signals below are calculated from analyses you explicitly saved.</p></div><button className="button subtle" onClick={refresh} disabled={busy}>{busy ? "Refreshing…" : "Refresh dashboard"}</button></div>{error && <div className="error">{error}</div>}{busy ? <Loading/> : rows.length === 0 ? <div className="card empty-state"><Lock size={20}/><h3>No saved analyses yet.</h3><p>Use “Save analysis (opt in)” after an analysis to build your dashboard.</p></div> : <><div className="stat-grid"><div className="stat card"><span>Total analyses</span><strong>{rows.length}</strong><small>Explicitly saved</small></div><div className="stat card"><span>Conversations</span><strong>{rows.filter((row) => row.analysis_type === "contextual").length}</strong><small>Contextual analyses</small></div><div className="stat card"><span>Average stress signal</span><strong>{Math.round(stats.averageStress * 100)}%</strong><small>Model score, not a clinical measure</small></div></div><div className="dashboard-grid"><div className="chart-card card"><h3>Most frequent top emotion</h3><ResponsiveContainer width="100%" height={240}><BarChart data={stats.distribution}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="label"/><YAxis allowDecimals={false}/><Tooltip/><Bar dataKey="count" fill="#4d9b91" radius={[6, 6, 0, 0]}/></BarChart></ResponsiveContainer></div><div className="chart-card card"><h3>Stress-language trend</h3><ResponsiveContainer width="100%" height={240}><LineChart data={stats.timeline}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="name"/><YAxis domain={[0, 100]}/><Tooltip/><Line type="monotone" dataKey="stress" stroke="#d6a257" strokeWidth={3}/></LineChart></ResponsiveContainer></div></div></>}</section>;
 }
 
 export function HistoryPage() {
@@ -160,7 +167,7 @@ export function HistoryPage() {
   useEffect(() => { refresh(); }, []);
   async function remove(id) { try { await api.deleteHistory(id); setItems((current) => current.filter((item) => item.id !== id)); if (expanded === id) setExpanded(null); } catch (requestError) { setError(requestError.message); } }
   async function clear() { if (!items.length || !window.confirm("Delete all saved analyses?")) return; try { await api.clearHistory(); setItems([]); setExpanded(null); } catch (requestError) { setError(requestError.message); } }
-  return <section className="page narrow"><div className="page-heading"><div><p className="eyebrow accent">OPT-IN HISTORY</p><h2>Only what you chose to keep.</h2><p>Saved analyses are stored locally unless MongoDB is configured.</p></div>{items.length > 0 && <button className="button subtle" onClick={clear}>Clear history</button>}</div>{error && <div className="error">{error}</div>}{busy ? <Loading/> : items.length ? items.map((item) => <div className="history-item card" key={item.id}><div className="history-main" onClick={() => setExpanded(expanded === item.id ? null : item.id)}><p>{item.text}</p><small>{item.created_at ? new Date(item.created_at).toLocaleString() : "Saved entry"} · {item.analysis_type || "individual"}</small>{expanded === item.id && <div className="history-details"><Result result={item}/></div>}</div><button onClick={() => remove(item.id)} aria-label="Delete entry"><Trash2 size={17}/></button></div>) : <div className="card empty-state"><Lock size={20}/><h3>Your history is empty.</h3><p>Analyze a message and explicitly opt in to saving it.</p></div>}</section>;
+  return <section className="page narrow"><div className="page-heading"><div><p className="eyebrow accent">OPT-IN HISTORY</p><h2>Only what you chose to keep.</h2><p>Saved analyses are stored locally unless MongoDB is configured.</p></div><div className="history-actions">{items.length > 0 && <button className="button subtle" onClick={clear}>Clear history</button>}<button className="button subtle" onClick={refresh} disabled={busy}>{busy ? "Refreshing…" : "Refresh history"}</button></div></div>{error && <div className="error">{error}</div>}{busy ? <Loading/> : items.length ? items.map((item) => <div className="history-item card" key={item.id}><div className="history-main" onClick={() => setExpanded(expanded === item.id ? null : item.id)}><p>{item.text}</p><small>{item.created_at ? new Date(item.created_at).toLocaleString() : "Saved entry"} · {item.analysis_type || "individual"}</small>{expanded === item.id && <div className="history-details"><Result result={item}/></div>}</div><button onClick={() => remove(item.id)} aria-label="Delete entry"><Trash2 size={17}/></button></div>) : <div className="card empty-state"><Lock size={20}/><h3>Your history is empty.</h3><p>Analyze a message and explicitly opt in to saving it.</p></div>}</section>;
 }
 
 export function About() {

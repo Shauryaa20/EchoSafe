@@ -68,6 +68,9 @@ class HistoryEntry(BaseModel):
 
 class ModelInfo(BaseModel):
     status: Literal["available", "unavailable"]
-    mode: Literal["checkpoint", "demo_fallback"]
+    mode: Literal["checkpoint", "unavailable"]
     checkpoint: Optional[str] = None
     architecture: Dict[str, object]
+    go_emotions: Optional[Dict[str, object]] = None
+    dreaddit: Optional[Dict[str, object]] = None
+    real_trained_checkpoints: bool = False

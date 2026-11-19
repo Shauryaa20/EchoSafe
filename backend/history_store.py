@@ -27,10 +27,33 @@ class HistoryStore:
                 self._mongo = None
 
         if self._mongo is None:
-            self.path = Path(os.getenv("ECHOSAFE_HISTORY_FILE", "backend/data/history.json"))
+            project_root = Path(__file__).resolve().parents[1]
+            configured_path = os.getenv("ECHOSAFE_HISTORY_FILE")
+            if configured_path:
+                self.path = Path(configured_path)
+                if not self.path.is_absolute():
+                    self.path = project_root / self.path
+            else:
+                self.path = project_root / "backend" / "data" / "history.json"
             self.path.parent.mkdir(parents=True, exist_ok=True)
             if not self.path.exists():
                 self.path.write_text("[]", encoding="utf-8")
+            alternate = project_root / "backend" / "backend" / "data" / "history.json"
+            if alternate.exists() and alternate.resolve() != self.path.resolve():
+                try:
+                    alternate_rows = json.loads(alternate.read_text(encoding="utf-8"))
+                    if isinstance(alternate_rows, list) and alternate_rows:
+                        current_rows = json.loads(self.path.read_text(encoding="utf-8"))
+                        existing_ids = {str(row.get("id")) for row in current_rows}
+                        merged = list(current_rows)
+                        for row in alternate_rows:
+                            if str(row.get("id")) not in existing_ids:
+                                merged.append(row)
+                        merged.sort(key=lambda row: row.get("created_at", ""), reverse=True)
+                        self.path.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
+                        alternate.write_text("[]", encoding="utf-8")
+                except (OSError, json.JSONDecodeError):
+                    pass
 
     @property
     def status(self) -> str:

@@ -27,6 +27,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
+from ml.real_model import TextClassifier
 
 from ml.tokenizer import WordTokenizer
 
@@ -103,51 +104,6 @@ class TextDataset(Dataset):
     def __getitem__(self, index: int) -> tuple[torch.Tensor, torch.Tensor]:
         return self.ids[index], self.targets[index]
 
-
-class TextClassifier(nn.Module):
-    def __init__(self, vocab: int, classes: int, architecture: str,
-                 embedding: int = 64, hidden: int = 64) -> None:
-        super().__init__()
-        self.architecture = architecture
-        self.embedding = nn.Embedding(vocab, embedding, padding_idx=0)
-        self.dropout = nn.Dropout(0.2)
-        if architecture == "cnn":
-            self.convs = nn.ModuleList([nn.Conv1d(embedding, hidden, k, padding=k // 2)
-                                        for k in (3, 4, 5)])
-            out = hidden * 3
-        elif architecture in ("bigru", "bilstm"):
-            rnn = nn.GRU if architecture == "bigru" else nn.LSTM
-            self.rnn = rnn(embedding, hidden, batch_first=True, bidirectional=True)
-            out = hidden * 2
-        elif architecture == "cnn_bigru_attention":
-            self.convs = nn.ModuleList([nn.Conv1d(embedding, hidden, k, padding=k // 2)
-                                        for k in (3, 4, 5)])
-            self.rnn = nn.GRU(embedding, hidden, batch_first=True, bidirectional=True)
-            self.attention = nn.Linear(hidden * 2, 1)
-            out = hidden * 5
-        else:
-            raise ValueError(f"unknown architecture: {architecture}")
-        self.head = nn.Linear(out, classes)
-
-    def forward(self, ids: torch.Tensor) -> torch.Tensor:
-        mask = ids.ne(0)
-        emb = self.embedding(ids)
-        if self.architecture == "cnn":
-            pooled = [torch.relu(c(emb.transpose(1, 2))).amax(dim=2) for c in self.convs]
-            features = torch.cat(pooled, dim=1)
-        elif self.architecture in ("bigru", "bilstm"):
-            output, _ = self.rnn(emb)
-            masked = output.masked_fill(~mask.unsqueeze(-1), -1e4)
-            features = masked.amax(dim=1)
-        else:
-            cnn = torch.cat([torch.relu(c(emb.transpose(1, 2))).amax(dim=2)
-                             for c in self.convs], dim=1)
-            output, _ = self.rnn(emb)
-            scores = self.attention(output).squeeze(-1).masked_fill(~mask, -1e4)
-            weights = torch.softmax(scores, dim=1)
-            recurrent = torch.bmm(weights.unsqueeze(1), output).squeeze(1)
-            features = torch.cat([cnn, recurrent], dim=1)
-        return self.head(self.dropout(features))
 
 
 def _write_confusion(path: Path, matrix: np.ndarray, labels: list[str]) -> None:

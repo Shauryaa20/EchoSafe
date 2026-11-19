@@ -6,12 +6,13 @@ from backend.main import app, engine
 client = TestClient(app)
 
 
-def test_health_reports_demo_fallback_without_checkpoint(monkeypatch):
+def test_health_reports_real_checkpoints(monkeypatch):
     response = client.get("/api/health")
     assert response.status_code == 200
     body = response.json()
     assert body["status"] == "ok"
-    assert body["mode"] in {"checkpoint", "demo_fallback"}
+    assert body["mode"] == "checkpoint"
+    assert body["model_status"] == "available"
 
 
 def test_analyze_is_deterministic_and_labelled():
@@ -22,7 +23,8 @@ def test_analyze_is_deterministic_and_labelled():
     assert body == second.json()
     assert body["mode"] == "checkpoint"
     assert body["model_status"] == "available"
-    assert len(body["emotions"]) == 7
+    assert len(body["emotions"]) == 28
+    assert all(0.0 <= emotion["score"] <= 1.0 for emotion in body["emotions"])
     assert 0.0 <= body["stress_score"] <= 1.0
 
 
@@ -34,6 +36,17 @@ def test_checkpoint_is_loaded_and_distinct_inputs_reach_model():
     assert calm["emotions"] != angry["emotions"] or calm["stress_score"] != angry["stress_score"]
 
 
+def test_real_model_metadata_and_no_synthetic_checkpoint():
+    info = client.get("/api/model-info").json()
+    assert info["status"] == "available"
+    assert info["real_trained_checkpoints"] is True
+    assert "echosafe.pt" not in str(info["go_emotions"]["checkpoint"])
+    assert "echosafe.pt" not in str(info["dreaddit"]["checkpoint"])
+    assert len(info["go_emotions"]["labels"]) == 28
+    assert info["go_emotions"]["parameter_count"] == 1388381
+    assert info["dreaddit"]["parameter_count"] == 812930
+
+
 def test_analyze_conversation():
     response = client.post("/api/analyze/conversation", json={
         "messages": [
@@ -43,7 +56,7 @@ def test_analyze_conversation():
         ]
     })
     assert response.status_code == 200
-    assert response.json()["analysis_type"] == "contextual"
+    assert response.json()["analysis_type"] == "individual"
     assert response.json()["context"] == ["Today was difficult.", "What made it difficult?"]
 
 
